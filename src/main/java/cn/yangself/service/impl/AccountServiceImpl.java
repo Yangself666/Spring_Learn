@@ -3,19 +3,19 @@ package cn.yangself.service.impl;
 import cn.yangself.dao.IAccountDao;
 import cn.yangself.domain.Account;
 import cn.yangself.service.IAccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * 账户的业务层实现类
  */
+@Service("accountService")
 public class AccountServiceImpl implements IAccountService {
-
+    @Autowired
     private IAccountDao accountDao;
 
-    public void setAccountDao(IAccountDao accountDao) {
-        this.accountDao = accountDao;
-    }
 
     public List<Account> findAllAccount() {
         return accountDao.findAllAccount();

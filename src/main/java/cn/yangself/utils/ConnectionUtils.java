@@ -33,4 +33,11 @@ public class ConnectionUtils {
         }
         return conn;
     }
+
+    /**
+     * 把连接和线程解绑
+     */
+    public void removeConnection(){
+        tl.remove();
+    }
 }
